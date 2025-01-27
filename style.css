@@ -1,0 +1,211 @@
+```css
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #a7ffeb);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Шапка */
+.header {
+    background: linear-gradient(135deg, #00695c, #26a69a);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header__title {
+    color: #ffffff;
+    font-size: 2.5em;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+/* Основной контент */
+main {
+    flex: 1;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInBackground 2s ease-in-out;
+}
+
+section {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    background: #ffffffcc;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.section-title {
+    margin-bottom: 20px;
+    color: #00695c;
+    text-align: center;
+    font-size: 1.8em;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #26a69a;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Кнопки */
+.buttons-section, .chat-section, .donate-section {
+    display: flex;
+  flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 15px 30px;
+    background-color: #26a69a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #00796b;
+    transform: scale(1.05);
+}
+
+/* Контакты */
+.contacts-section p {
+    margin: 12px 0;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.contacts-section a {
+    color: #00796b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contacts-section a:hover {
+    color: #004d40;
+}
+
+/* Кнопка копирования */
+.copy-button {
+    background-color: #ff9800;
+}
+
+.copy-button:hover {
+    background-color: #f57c00;
+}
+
+/* Футер */
+.footer {
+    background: linear-gradient(135deg, #00695c, #26a69a);
+    text-align: center;
+    padding: 20px;
+    color: #ffffff;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+}
+
+/* Анимации */
+@keyframes fadeInBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Дополнительные анимации для плавности */
+.animate__animated.animate__fadeInUp {
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.animate__animated.animate__fadeInDown {
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+/* Медиа запросы */
+@media (max-width: 600px) {
+    .button {
+        width: 90%;
+        text-align: center;
+    }
+
+    section {
+        padding: 20px 15px;
+    }
+
+    .header__title {
+        font-size: 2em;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .contacts-section p, .donate-section p {
+        font-size: 1em;
+    }
+}
